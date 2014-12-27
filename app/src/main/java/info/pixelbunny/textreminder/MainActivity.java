@@ -1,8 +1,10 @@
 package info.pixelbunny.textreminder;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+//import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,10 +20,15 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Context context = getApplicationContext();
+        MessageFragment testFrag = new MessageFragment(context);
+
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
+            /*getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, testFrag)
+                    .commit(); */
+            getFragmentManager().beginTransaction().add(R.id.container, testFrag).commit();
         }
     }
 
