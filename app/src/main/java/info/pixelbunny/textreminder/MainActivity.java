@@ -1,9 +1,6 @@
 package info.pixelbunny.textreminder;
 
-import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-//import android.support.v4.app.Fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -21,8 +17,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Context context = getApplicationContext();
-        MessageFragment testFrag = new MessageFragment(context);
+        getApplicationContext();
+        MessageFragment testFrag = new MessageFragment();
 
         if (savedInstanceState == null) {
             /*getSupportFragmentManager().beginTransaction()
@@ -58,7 +54,7 @@ public class MainActivity extends ActionBarActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+/*    public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
         }
@@ -69,5 +65,5 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
-    }
+    }*/
 }
