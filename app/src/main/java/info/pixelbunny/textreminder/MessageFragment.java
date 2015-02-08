@@ -5,6 +5,7 @@ package info.pixelbunny.textreminder;
  */
 import android.app.Fragment;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -38,6 +39,11 @@ public class MessageFragment extends Fragment {
 
                 message = editTextMessage.getText().toString();
                 phoneNumber = editTextNumber.getText().toString();
+
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+
+
 
                 //test stuff
                 CharSequence testmsg = message + ' ' + phoneNumber;
