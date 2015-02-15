@@ -29,8 +29,8 @@ public class MessageFragment extends Fragment {
         final EditText editTextNumber = (EditText) fragmentView.findViewById(R.id.editTextNumber);
         final EditText editTextMessage = (EditText) fragmentView.findViewById(R.id.editTextMessage);
 
-        Button submitButton = (Button) fragmentView.findViewById(R.id.buttonSubmit);
-        submitButton.setOnClickListener(new View.OnClickListener() {
+        Button sendButton = (Button) fragmentView.findViewById(R.id.buttonSend);
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View fragmentView) {
 
@@ -51,6 +51,21 @@ public class MessageFragment extends Fragment {
 
             }
         });
+		
+		Button saveButton = (Button) fragmentView.findViewById(R.id.buttonSave);
+		saveButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View fragmentView) {
+				//save the msg...
+				
+				CharSequence successMsg = "Message saved";
+				Toast.makeText(getActivity(), successMsg, Toast.LENGTH_LONG).show();
+				
+				
+			}
+			
+		});
 
         return fragmentView;
 
