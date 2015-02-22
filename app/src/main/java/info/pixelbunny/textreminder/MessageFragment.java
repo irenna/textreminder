@@ -4,6 +4,8 @@ package info.pixelbunny.textreminder;
  * Created by meggz on 23/12/14.
  */
 import android.app.Fragment;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
@@ -58,10 +60,16 @@ public class MessageFragment extends Fragment {
 			@Override
 			public void onClick(View fragmentView) {
 				//save the msg...
-				
-				CharSequence successMsg = "Message saved";
-				Toast.makeText(getActivity(), successMsg, Toast.LENGTH_LONG).show();
-				
+
+                MessageDbHelper dbHelper = new MessageDbHelper(getActivity().getApplicationContext());
+
+                String message = editTextMessage.getText().toString();
+                String phoneNumber = editTextNumber.getText().toString();
+
+                long newRowId = dbHelper.insertMessage(message, phoneNumber);
+                //check if insert was successful!
+                CharSequence resultsMsg = (newRowId > 0) ?  "Message saved" : "Error - Saving Message Failed";
+				Toast.makeText(getActivity(), resultsMsg, Toast.LENGTH_LONG).show();
 				
 			}
 			
