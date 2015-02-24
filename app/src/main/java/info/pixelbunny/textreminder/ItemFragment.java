@@ -25,7 +25,7 @@ import info.pixelbunny.textreminder.dummy.DummyContent;
  * interface.
  */
 public class ItemFragment extends Fragment implements AbsListView.OnItemClickListener {
-
+/*
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -34,35 +34,23 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+*/
     private OnFragmentInteractionListener mListener;
-
-    /**
-     * The fragment's ListView/GridView.
-     */
-    private AbsListView mListView;
-
-    /**
-     * The Adapter which will be used to populate the ListView/GridView with
-     * Views.
-     */
-    private ListAdapter mAdapter;
+    private AbsListView mListView;  //The fragment's ListView/GridView.
+    private ListAdapter mAdapter; //Adapter which will be used to populate the ListView/GridView with Views
 
     // TODO: Rename and change types of parameters
     public static ItemFragment newInstance(String param1, String param2) {
         ItemFragment fragment = new ItemFragment();
-        Bundle args = new Bundle();
+        /*Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        fragment.setArguments(args);*/
         return fragment;
     }
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public ItemFragment() {
+        //Mandatory empty constructor for the fragment manager to instantiate the fragment (e.g. upon screen orientation changes).
     }
 
     @Override
@@ -70,8 +58,8 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            //mParam1 = getArguments().getString(ARG_PARAM1);
+            //mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
         // TODO: Change Adapter to display your content
@@ -79,7 +67,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
                 android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
     }
 
-    @Override
+ /*   @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item, container, false);
@@ -93,7 +81,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
 
         return view;
     }
-
+*/
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
